@@ -16,8 +16,8 @@ class RegisterController extends Controller {
             'deleted_at'=>new \DateTime()]
         );
         Mail::send(['text' => 'mail'],['name', 'Test'], function($message){
-            $message->to ($user->take('email'), 'To web dev blog')->subject('Test mail');
-            $message->from ('artikdx2@gmail.com', 'Web dev blog');
+            $message->to ($user->email, 'Test')->subject('Test mail');
+            $message->from ('artikdx2@gmail.com', 'Regist');
         });
 
     }
